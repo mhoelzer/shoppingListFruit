@@ -1,0 +1,115 @@
+/*background*/
+html{
+	background: url(pabg.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+
+/*use font-family: 'Droid Serif', serif;
+*/
+/*font-family: 'Love Ya Like A Sister', cursive;*/
+h1{
+	font-family: 'Cherry Cream Soda', cursive;
+	text-shadow: -1px 0 #FAFBFD, 0 1px #FAFBFD, 1px 0 #FAFBFD, 0 -1px #FAFBFD;
+	color: #91982A;
+	font-size: 50px;
+	text-align: center;
+}
+
+h2, h3 {
+	font-family: 'Love Ya Like A Sister', cursive;
+	color: #FAFBFD;
+	font-size: 28px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 #91982A, 0 -1px #91982A;
+}
+
+label {
+	font-family: 'Love Ya Like A Sister', cursive;
+	color: #FAFBFD;
+	font-size: 20px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 #91982A, 0 -1px #91982A;
+}
+.gradient {
+
+	background-image: 
+		url(pineapple-cut.png), 
+		linear-gradient(
+			to right,
+			#fef8b8, transparent
+    	);
+}
+
+.gradient1 {
+	background-image: url(pineapple-cut.png);
+	background-color: rgba(254, 248, 184, .7);
+}
+.gradient1 h2 {
+	text-align: center;
+	display: block;
+	line-height: 2.1em;
+}
+.gradient1 li {
+	line-height: 50%;
+	font-size: 18px;
+}
+
+nav ul{
+	/*removes bullet points from list*/
+	list-style-type: none;
+	margin: 0 0 10px 0;
+	padding: 0;
+	overflow: hidden;
+}
+nav li{
+	/*puts all in nivce line*/
+	float: left;
+}
+nav li a{
+	font-family: 'Love Ya Like A Sister', cursive;
+	display: block;
+	color: #91982A;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+/*the commands attached on elemnt itself*/
+nav li a:hover{
+	background-image: url(pineapple-cut.png);
+	background-color: #91982A; 
+    color: #FAFBFD;
+}
+li{
+	/*list-style takes away orinigal style*/
+	list-style: none;
+	font-size: 20px; 
+	font-family: 'Droid Serif', serif;
+	color: #FAFBFD;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 #91982A, 0 -1px #91982A;
+}
+ul{
+	padding-left: 0;
+}
+h4{
+	font-family: 'Love Ya Like A Sister', cursive;
+	color: #FAFBFD;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 #91982A, 0 -1px #91982A;
+	padding: 1em;
+}
+button, #remove{
+	border-radius: 7px;
+	border: 1.4px solid #91982A;
+	background-color: #FAFBFD;
+	color: black;
+	font-size: 13px; 
+	font-family: 'Droid Serif', serif;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: .4s;
+}
+button:hover, #remove:hover{
+	/*can change cursor shape*/
+	cursor: pointer;
+	background-color: #91982A; 
+    color: #FAFBFD;
+}

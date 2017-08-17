@@ -1,0 +1,21 @@
+<!-- no html to wrap because it will connect to index.html -->
+<!-- this is like a partial (make bits of code to add to main spot) -->
+		<link rel="stylesheet" type="text/css" href="./main.css">
+
+<h2>Welcome to Fruit for Thought and Consumption! We offer a delicious variety of fruits with each type given a <i>punny</i> name!</h2>
+
+
+<br>
+
+<div class="gradient1">
+	<h2>Current List</h2>
+	<!-- the curly brackets weree also used in mustache. we are hoping for some kind of data to be inside. to do an angular exprecin inside html, we need these for data to go through -->
+	<h4>
+		<li ng-repeat="item in items | orderBy: order">
+			{{item.fruit}}
+			</br>
+			<blockquote>Quantity (per Pound): {{item.qty}}</blockquote> 
+			<blockquote>Priority: {{item.priority}}</blockquote>
+		</li>
+	</h4>
+</div>

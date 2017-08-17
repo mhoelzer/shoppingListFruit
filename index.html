@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- need to say its angular by putting a directive. tells the thing its an angular module. the $scope will let the stuff be accessible and will be cojnnected to this page -->
+<html ng-app="myApp">
+	<head>
+		<title>Shopping List Application</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link href="https://fonts.googleapis.com/css?family=Droid+Serif|Love+Ya+Like+A+Sister|Londrina+Solid|Cherry+Cream+Soda" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Fruit for Thought and Consumption</h1>
+		<nav>
+			<div class="gradient">
+				<ul>
+					<!-- building a template in index.html -->
+					<li><a href="#/home">Home</a></li>
+					<li><a href="#/shopping-list">Berry Good Selection</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- main reads w/e is in home or shopping page and includes it in template. just keep header and footer the same -->
+		<!-- ng-view is a placeholder for the info that goes in home.html and shoppinglist -->
+		<main ng-view></main>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    	<!-- need it to have the config first!!! -->
+    	<script src="./shopping-config.js"></script>
+    	<script src="./shopping-controller.js"></script>
+    	<script src="./shopping-service.js"></script>
+    	<script src="./home-controller.js"></script>
+	</body>
+</html>

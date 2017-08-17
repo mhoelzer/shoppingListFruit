@@ -1,0 +1,67 @@
+<!-- forms in html pose data to database. we hope it gets sent there -->
+<!-- ng ataches self to submit button and makes an obejct for everything added -->
+<!-- newItem is info inside of form after press submit -->
+<!-- this is seen in shopping-controller.js on line 10ish -->
+<form ng-submit='addItem(newItem)' name="list">
+	<label>Fruits</label>
+	<!-- value that goes in input box will go with key of name -->
+	<!-- the dot operator means a property in an object. the properties are the newItem -->
+	<!-- <input type="text" placeholder="Item" ng-model="newItem.name"> -->
+	    <select id="Item" ng-model="newItem.fruit" style="font-size: 13px; font-family: 'Droid Serif', serif;">
+<!-- 	        <option value="nofruit" id="nofruit">We PEEL sad that you haven't picked a fruit yet :(</option> -->
+	        <option value="Apples" id="apples">You will APPLESolutely love these tasty treats! :)</option>
+	        <option value="Bananas" id="bananas">"Knock, knock." "Who's there?" "BANANA." "Banana who?" "Knock, knock. "Who's there?" "BANANA." "Banana who?"...</option>
+	        <option value="Beets" id="beets">They're a root, not a fruit, but good nutrition can't be BEET! :)</option> 
+	        <option value="Blueberries" id="blueberries">These little BERRIES sure won't make you feel BLUE! :)</option>
+	        <option value="Cherries" id="cherries">These guys will CHERRY up your day! :)</option>
+	        <option value="Coconuts" id="coconuts">You'll go COCONUTS with this fruit! :)</option>
+	        <option value="Grapes" id="grapes">Eating these will make you GRAPEful! :)</option>
+	        <option value="Kiwis" id="kiwis">This delicious fruit will steal the KIWI to your heart! :)</option>
+	        <option value="Limes" id="limes">What a subLIME flavor! :)</option>
+	       	<option value="Mangos" id="mangos">It will be impossible to let these MANGO away! :)</option>	
+	       	<option value="Oranges" id="oranges">... "Knock, knock." "Who's there?" "Orange." "Orange who?" "ORANGE you glad I didn't say 'banana?'" :)</option>
+	        <option value="Peaches" id="peaches">Please apPEACHiate these tasty fruits! :)</option>
+	        <option value="Pears" id="pears">It's apPEARent that these are fantastic fruits! :)</option>
+	        <option value="Strawberries" id="strawberries">These are BERRY delicious strawberries! :)</option>
+	        <option value="Watermelons" id="watermelons">These fruits are one in a WATERMELON! :)</option>
+	        <option value="Shreddar Cheese" id="shreddar">It's not a fruit, but Shreddar Cheese (shredded cheddar) makes a fine PEAR with any of our fruits! :)</option>
+	    </select>
+	<br>
+	<label>Quantity (per Pound)</label>
+		<input type="number" placeholder="Qty" ng-model="newItem.qty" style="font-size: 13px; font-family: 'Droid Serif', serif;" min="0">
+	<br>
+	<label>Priority</label>
+		<select ng-model="newItem.priority" style="font-size: 13px; font-family: 'Droid Serif', serif;">
+			<option>Low</option>
+			<option>High</option>
+		</select>
+	<!-- this button works because it has a form inside the data and sends to service elsewhere. we just put where to send it at the top. the premise of building forms is to make it and send somewhere -->
+	<button type="submit">Add</button>
+	<!-- when submit is hit, it builds an object named quantity and priority and whatever is in the box is the value of the propert. the ng-submit then finds the addItem function -->
+</form>
+<!-- what on this page refers to this list? the form. we should soon be able to see the output -->
+<!-- would want to use angular in this situation/applciation because it is good for single page applications. angular helps with web ap and loads single things on a page -->
+<!-- {{}} angular expression prints out what list is. attach self to name. its the logic to be attachd to items -->
+<!-- <p>{{list}}</p>
+ --><h3>Shopping List</h3>
+<!-- ng-click is another directive. order is order data by something. -->
+<button ng-click="order = 'qty'">Arrange by Quantity</button>
+<button ng-click="order = 'fruit'">Arrange by Fruit</button>
+<button ng-click="order = 'priority'">Arrange by Priority</button>
+<div class="card">
+	<div class="card-block">
+		<ul>
+			<li ng-repeat="item in items | orderBy: order">
+				<!-- separate everything by a dash if put each on own line and end with a - -->
+				<!-- passing an item -->
+				{{item.fruit}}
+				</br>
+				<blockquote>Quantity (per Pound): {{item.qty}}</blockquote> 
+				<blockquote>Priority: {{item.priority}}</blockquote>
+				<button id="remove" ng-click="removeItem(item)"><b>X</b></button>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- OUTSIDE dvi for removing it all and loks better -->
+<button ng-click="removeAll()">Remove All</button>
